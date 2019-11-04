@@ -1,10 +1,12 @@
+import axios from "axios";
+
 export function getToken() {
   return localStorage.getItem("token");
 }
 
 export default function() {
   return axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: "http://localhost:3000",
     headers: {
       Authorization: localStorage.getItem("token")
     }
