@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../utils/api";
 
-function Login() {
+function Login(props) {
   const [error, setError] = useState();
   const [data, setData] = useState({
     username: "",
@@ -23,6 +23,7 @@ function Login() {
       .then(res => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
+        props.history.push("/account");
       })
       .catch(error => {
         console.log("Error:", error);
@@ -31,7 +32,9 @@ function Login() {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
+      {error && <div className="error">{error}</div>}
+
       <input
         type="text"
         name="username"
@@ -46,7 +49,8 @@ function Login() {
         value={data.password}
         onChange={handleChange}
       />
-      <button type="submit">Submit</button>
+
+      <button type="submit">Login</button>
     </form>
   );
 }

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../utils/api";
 
 function Account(props) {
   const [user, setUser] = useState({
@@ -25,7 +26,7 @@ function Account(props) {
       <h1>My Account</h1>
 
       <div className="account-row">Name: {user.name}</div>
-      <div className="account-row">Email: {user.email}</div>
+      <div className="account-row">Username: {user.username}</div>
     </>
   );
 }
