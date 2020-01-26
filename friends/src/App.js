@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Link, Route, withRouter, Redirect } from "react-router-dom";
+import { Link, Route, withRouter } from "react-router-dom";
 import { getToken } from "../utils/api";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";

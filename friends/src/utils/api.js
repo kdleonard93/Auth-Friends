@@ -6,7 +6,7 @@ export function getToken() {
 
 export default function() {
   return axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:5000/api/",
     headers: {
       Authorization: localStorage.getItem("token")
     }
